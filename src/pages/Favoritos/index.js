@@ -50,26 +50,37 @@ export default function Favoritos() {
   
 
   return (
-    <div className='favoritos-page'>
-      <div className='grid-container'>
-        {filmes.map((filme) => (
-          <div className='grid' key={filme.id}>
-            <Link className='link-title' to={`/filme/${filme.id}`}>
-              <span>{filme.title}</span>
-            </Link>
-            <Link to={`/filme/${filme.id}`}>
-              <img
-                className='img-fav'
-                src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
-                alt={filme.title || 'Filme'}
-              />
-            </Link>
-            <div className='div-btn'>
-              <button onClick={() => handleDelete(filme.id)}>Excluir</button>
-            </div>
+
+      <div className='container'>
+        {
+        
+        filmes.length > 0 ?
+        <div className='favoritos-page'>
+          <div className='grid-container'>
+            {filmes.map((filme) => (
+              <div className='grid' key={filme.id}>
+                <Link className='link-title' to={`/filme/${filme.id}`}>
+                  <span>{filme.title}</span>
+                </Link>
+                <Link to={`/filme/${filme.id}`}>
+                  <img
+                    className='img-fav'
+                    src={`https://image.tmdb.org/t/p/original/${filme.backdrop_path}`}
+                    alt={filme.title || 'Filme'}
+                  />
+                </Link>
+                <div className='div-btn'>
+                  <button onClick={() => handleDelete(filme.id)}>Excluir</button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        
+            :
+        <h2>Não há nada por aqui, favorite um filme primeiro :)</h2>
+            }
       </div>
-    </div>
+
   );
 }

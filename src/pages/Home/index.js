@@ -7,10 +7,13 @@ import Language from "../../components/Language";
 export default function Home() {
   const [filmes, setFilmes] = useState([]);
   const [loading, setLoading] = useState(true);
+
   const [language, setLanguage] = useState(() => {
     const savedLanguage = localStorage.getItem('@currentLanguage');
-    return savedLanguage ? savedLanguage : 'pt-BR';
+    return savedLanguage ? JSON.parse(savedLanguage) : 'pt-BR';
+
   });
+  
   const [page, setPage] = useState(() => {
     const savedPage = localStorage.getItem('@currentPage');
     return savedPage ? parseInt(savedPage) : 1;
@@ -23,7 +26,7 @@ export default function Home() {
       const response = await api.get('movie/now_playing', {
         params: {
           api_key: 'dfff41e5a597e2e1ab764d01aab04ee4',
-          language: language,
+          language: 'pt-BR',
           page: page,
         }
       });
@@ -37,7 +40,7 @@ export default function Home() {
 
   useEffect(() => {
     localStorage.setItem('@currentPage', page);
-    localStorage.setItem('@currentLanguage', language)
+    localStorage.setItem('@currentLanguage', JSON.stringify(language))
   }, [page, language]);
 
   if (loading) {

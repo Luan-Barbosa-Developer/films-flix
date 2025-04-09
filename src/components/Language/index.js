@@ -12,6 +12,7 @@ export default function Language(props) {
         >
             <option value="pt-BR">Português (Brasil)</option>
             <option value="en">English</option>
+            <option value="fr">francês</option>
         </select>
     </div>
     )

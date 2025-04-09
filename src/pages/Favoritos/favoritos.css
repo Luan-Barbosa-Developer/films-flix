@@ -1,7 +1,16 @@
 /* Container principal dos cards */
+.container{
+  display: flex;
+  justify-content: center;
+}
+
 .favoritos-page {
   min-height: calc(100vh - 140px); 
 
+}
+
+.container h2{
+  margin-top: 40px;
 }
 
 

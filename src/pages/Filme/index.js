@@ -15,7 +15,7 @@ export default function Filmes(params) {
 
     const [language, setLanguage] = useState(() => {
         const savedLanguage = localStorage.getItem('@currentLanguage');
-        return savedLanguage ? JSON.stringify(savedLanguage) : 'pt-BR';
+        return savedLanguage ? JSON.parse(savedLanguage) : 'pt-BR';
     });
 
     const navigate = useNavigate()
@@ -46,7 +46,7 @@ export default function Filmes(params) {
 
 
       useEffect(() => {
-        localStorage.setItem('@currentLanguage', language)
+        localStorage.setItem('@currentLanguage', JSON.stringify(language))
       }, [ language]);
 
 
@@ -84,9 +84,18 @@ export default function Filmes(params) {
                 <h1>{movie.title}</h1>
                 <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}/>
                 <h3>Sinopse</h3>
-                <span>{movie.overview}</span>
+                <span>{movie.overview ? movie.overview : "Sinopse não disponível no seu idioma atual"}</span>
                 <br/>
-                <strong>{movie.vote_average} / 10</strong>
+                <div className="more-details">
+                    <div className="vote-average">
+                        <strong>Avaliação</strong>
+                        <span>{movie.vote_average.toFixed(1)}/10</span>
+                    </div>
+                    <div className="release">
+                        <strong>Data de lançamento</strong>
+                        <span>{new Date(movie.release_date).toLocaleDateString(language)}</span>
+                    </div>
+                </div>
                 <div className="area-btn">
                     <button onClick={saveMovie}>Salvar</button>
                     <button><a target="blank" rel="external" href={`https://youtube.com/results?search_query=${movie.title} trailer`}>Trailer</a></button>
