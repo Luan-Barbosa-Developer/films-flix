@@ -1,0 +1,41 @@
+.footer {
+  background-color: #041C45;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+  
+.footer a {
+  color: #4ea8de;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #90cdf4;
+}
+
+.social-links {
+  margin: 10px 0;
+}
+
+/* Botão Voltar ao topo */
+.scroll-top-btn {
+  margin-top: 10px;
+  background-color: transparent;
+  color: #4ea8de;
+  border: 1px solid #4ea8de;
+  border-radius: 20px;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 10px;
+}

@@ -1,0 +1,106 @@
+/* Container principal dos cards */
+.favoritos-page {
+  min-height: calc(100vh - 140px); 
+
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: auto;
+  max-width: 100%;
+  width: 1150px;
+
+}
+
+/* Estilo da imagem do filme */
+.img-fav {
+  display: flex;
+  height: 180px;
+  width: 270px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.img-fav:hover {
+  transform: scale(1.03);
+}
+
+/* Cada card de filme */
+.grid {
+  margin: 0 auto;
+}
+
+/* Link com o título do filme */
+.grid a {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.link-title {
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.div-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.div-btn button{
+  margin-right: 10px ;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #041C45;
+
+}
+.div-btn button:hover{
+  color: red;
+}
+
+/* RESPONSIVIDADE */
+
+/* Até 1280px */
+@media (max-width: 1280px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 900px;
+  }
+}
+
+/* Até 900px */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 600px;
+    gap: 12px;
+  }
+}
+
+/* Até 610px */
+@media (max-width: 610px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    width: 400px;
+  }
+
+  .img-fav {
+    width: 100%;
+    height: auto;
+  }
+}

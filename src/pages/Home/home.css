@@ -1,0 +1,80 @@
+.container{
+    height: 100%;
+}
+
+.lista-filmes{
+    max-width: 800px;
+    margin: 14px auto;
+}
+
+.lista-filmes article{
+    width: 100%;
+    background-color: #FFFAF3;
+    padding: 15px;
+    border-radius: 4px;
+
+}
+
+.lista-filmes strong{
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 22px;
+    display: block;
+}
+
+.lista-filmes img{
+    width: 800px;
+    max-width: 100%;
+    max-height: 440px;
+    object-fit: cover;
+    display: block;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    font-size:24px;
+    background-color: #FFD166;
+    text-decoration: none;
+    color: #041C45;
+    border-radius: 0 0 5px 5px;
+   
+}
+
+.link:hover{
+    color:#EF476F
+}
+
+.pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .pagination button {
+    padding: 10px 16px;
+    background-color: #041C45;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .pagination button:hover:not(:disabled) {
+    background-color: #063066;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    font-weight: bold;
+    font-size: 16px;
+  }
